@@ -6,16 +6,23 @@
 
 
 def fizz_buzz(number):
-    """Returns Fizz if number is divisible by 3, Buzz if divisible by 5, FizzBuzz if divisible by both 3 and 5.
-    If not divisible by either 3 or 5, returns the number itself.
-    >>> fizz_buzz(3)
-    'Fizz'
-    >>> fizz_buzz(5)
-    'Buzz'
-    >>> fizz_buzz(15)
-    'FizzBuzz'
-    """
-    return
+    # """Returns Fizz if number is divisible by 3, Buzz if divisible by 5, FizzBuzz if divisible by both 3 and 5.
+    # If not divisible by either 3 or 5, returns the number itself.
+    # >>> fizz_buzz(3)
+    # 'Fizz'
+    # >>> fizz_buzz(5)
+    # 'Buzz'
+    # >>> fizz_buzz(15)
+    # 'FizzBuzz'
+    # """
+    if number % 3 == 0 and number % 5 == 0:
+        return "FizzBuzz"
+    elif number % 3 == 0:
+        return "Fizz"
+    elif number % 5 == 0:
+        return "Buss"
+    else:
+        return number
 
 
 # Question 2
@@ -24,14 +31,23 @@ def fizz_buzz(number):
 
 
 def sum_of_squares(numbers):
-    """Returns the sum of the squares of all the numbers in a list.
-    >>> sum_of_squares([1, 2, 3])
-    14
-    >>> sum_of_squares([2, 4, 6])
-    56
-    """
-    return
+    # """Returns the sum of the squares of all the numbers in a list.
+    # >>> sum_of_squares([1, 2, 3])
+    # 14
+    # >>> sum_of_squares([2, 4, 6])
+    # 56
+    # """
 
+    total_sum = 0
+
+    for number in numbers:
+        total_sum += number * number
+    
+    print("The final total sum of the squares is:", total_sum)
+    
+    return total_sum
+
+sum_of_squares ([1, 2, 3])
 
 # Question 3
 
@@ -45,7 +61,15 @@ def count_vowels(string):
     >>> count_vowels("aeiou")
     5
     """
-    return
+    vowels = "aeiou"
+    vowels_count = 0
+
+    for letter in string:
+        if letter in vowels:
+            vowels_count += 1
+
+    print(f"The total number of vowels in '{string}' is {vowels_count}")
+    return vowels_count
 
 
 # Question 4
@@ -60,6 +84,13 @@ def count_repeats(string):
     >>> count_repeats("aeiou")
     0
     """
+    repeat_char = 0
+
+    for letter in string:
+        if string.count(letter) > 1:
+            repeat_char += 1
+
+    print(f"The total number of repeated charactoers in '{string}' is '{repeat_char}")
     return
 
 
